@@ -12,6 +12,26 @@ class LocationsDataService {
     
     static let locations: [Location] = [
         Location(
+            name: "Saint Sophia Cathedral",
+            cityName: "Kyiv",
+            coordinates: CLLocationCoordinate2D(latitude: 50.4501, longitude: 30.5234),
+            description: "Saint Sophia Cathedral in Kyiv, Ukraine, is an architectural monument of Kyivan Rus. The former cathedral is one of the city's best known landmarks and the first heritage site in Ukraine to be inscribed on the World Heritage List along with the Kyiv Cave Monastery complex.",
+            imageNames: [
+                "kyiv-saint-sophia-1",
+                "kyiv-saint-sophia-2",
+                "kyiv-saint-sophia-3"],
+            link: "https://en.wikipedia.org/wiki/Saint_Sophia_Cathedral,_Kyiv"),
+        Location(
+            name: "Ming Palace",
+            cityName: "Nanjing",
+            coordinates: CLLocationCoordinate2D(latitude: 32.0584, longitude: 118.7965),
+            description: "The Ming Palace, also known as the Forbidden City of Nanjing, was the 14th-century imperial palace of the early Ming dynasty, when Nanjing was the capital of China.",
+            imageNames: [
+                "nanjing-palace-1",
+                "nanjing-palace-2",
+                "nanjing-palace-3"],
+            link: "https://en.wikipedia.org/wiki/Ming_Palace"),
+        Location(
             name: "Colosseum",
             cityName: "Rome",
             coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),

@@ -18,6 +18,7 @@ final class LocationsViewModel: ObservableObject {
     }
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     @Published var showLocationsList: Bool = false
+    @Published var sheetLocation: Location? = nil
     
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
@@ -51,5 +52,19 @@ final class LocationsViewModel: ObservableObject {
             mapLocation = location
             showLocationsList = false
         }
+    }
+    
+    func nextButtonPressed() {
+        guard let currentIndex = locations?.firstIndex(where: { $0 == mapLocation }) else { return }
+        
+        let nextIndex = currentIndex + 1
+        guard let contains = locations?.indices.contains(nextIndex), contains else {
+            guard let firstLocatiom = locations?.first else { return }
+            showNextLocation(location: firstLocatiom)
+            return
+        }
+        
+        guard let nextLocation = locations?[nextIndex] else { return }
+        showNextLocation(location: nextLocation)
     }
 }
